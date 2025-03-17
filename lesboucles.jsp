@@ -1,4 +1,4 @@
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,8 +20,8 @@
             <input type="number" id="value" name="value">
             <button type="submit">Afficher</button>
         </form>
-
-<% 
+        
+        <% 
             String value_str = request.getParameter("value");
 
             if (value_str != null && !value_str.isEmpty()) {
@@ -124,3 +124,8 @@
                 out.print("</section>");
             }
         %>
+
+        <a href="index.html">Retour au sommaire</a>
+    </main>
+</body>
+</html>
