@@ -27,6 +27,28 @@
 
 <h2>Exercice 1 : Le carré d'étoiles</h2>
 <p>Ecrire le code afin de produire un carré d'étoile</p>
+import java.util.Scanner;
+
+public class CarreEtoiles {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Demander à l'utilisateur de saisir une valeur
+        System.out.print("Entrez un nombre : ");
+        int valeur = scanner.nextInt();
+        
+        // Affichage du carré d'étoiles
+        for (int i = 0; i < valeur; i++) {
+            for (int j = 0; j < valeur; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+        scanner.close();
+    }
+}
+
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>*****</br>*****</br>*****</br>*****</br>*****</p>
 
