@@ -109,7 +109,7 @@ public class TriangleInverse {
 <head>
     <title>Triangle Rectangle 2</title>
     <style>
-        pre { font-family: monospace; } 
+        pre { font-family: monospace; } /* Assure un alignement correct */
     </style>
 </head>
 <body>
@@ -127,7 +127,7 @@ public class TriangleInverse {
         <% int cpt = Integer.parseInt(valeur); %>
         <pre>
         <% for (int i = 1; i <= cpt; i++) { 
-                
+                // Espaces pour l'alignement à droite
                 for (int j = 1; j <= cpt - i; j++) { %>
                     <%= " " %>
                 <% } 
@@ -141,6 +141,7 @@ public class TriangleInverse {
     <% } %>
 </body>
 </html>
+
 
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
