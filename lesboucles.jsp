@@ -81,6 +81,24 @@ public class TriangleRectangleGauche {
 
 <h2>Exercice 3 : Triangle rectangle inversé</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
+import java.util.Scanner;
+
+public class TriangleInverse {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Entrez un nombre : ");
+        int n = scanner.nextInt();
+        scanner.close();
+
+        for (int i = n; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>*****</br>****</br>***</br>**</br>*</p>
 
