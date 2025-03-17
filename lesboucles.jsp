@@ -1,15 +1,25 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<html>
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<title>Boucles</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFE114 - Projet Java Web</title>
 </head>
-<body bgcolor=white>
-<h1>Exercices sur les boucles</h1>
-<form action="#" method="post">
-    <label for="inputValeur">Saisir le nombre d'étoiles : </label>
-    <input type="text" id="inputValeur" name="valeur">
-    <input type="submit" value="Afficher">
-</form>
+<body>
+    <header>
+        <h2>Application Java développée par Nils Zoumenou</h2>
+    </header>
+
+    <main>
+        <h3>Exercices sur les boucles</h3>
+        
+        <form action="#" method="post">
+            <label for="value">Saisir le nombre d'étoiles :</label>
+            <input type="number" id="value" name="value">
+            <button type="submit">Afficher</button>
+        </form>
 
 <% 
             String value_str = request.getParameter("value");
