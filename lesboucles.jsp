@@ -11,127 +11,106 @@
     <input type="submit" value="Afficher">
 </form>
 
-<%-- Récupération de la valeur saisie par l'utilisateur --%>
-<% String valeur = request.getParameter("valeur"); %>
-    
-<%-- Vérification de l'existence de la valeur --%>
-<% if (valeur != null && !valeur.isEmpty()) { %>
+<% 
+            String value_str = request.getParameter("value");
 
-<%-- Boucle for pour afficher une ligne d'étoiles --%>
-    <%int cpt = Integer.parseInt(valeur); %>
-    <p>
-    <% for (int i = 1; i <= cpt; i++) { %>
-       <%= "*" %>
-    <% } %>
-    </p>
+            if (value_str != null && !value_str.isEmpty()) {
+                int value = Integer.parseInt(value_str);
 
-<h2>Exercice 1 : Le carré d'étoiles</h2>
-<p>Ecrire le code afin de produire un carré d'étoile</p>
-import java.util.Scanner;
+                out.print("<section>");
+                out.println("<h3>Exercice 1 : Le carré d'étoiles :</h3>");
+                for (int i = 1; i <= value; i++) {
+                    for (int j = 1; j <= value; j++) {
+                        out.print("*");
+                    }
+                    out.println("<br />");
+                }
+                out.print("</section>");
 
-public class CarreEtoiles {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        // Demander à l'utilisateur de saisir une valeur
-        System.out.print("Entrez un nombre : ");
-        int valeur = scanner.nextInt();
-        
-        // Affichage du carré d'étoiles
-        for (int i = 0; i < valeur; i++) {
-            for (int j = 0; j < valeur; j++) {
-                System.out.print("*");
+                out.print("<section>");
+                out.println("<h3>Exercice 2 : Triangle rectangle gauche :</h3>");
+                for (int i = 1; i <= value; i++) {
+                    for (int j = 1; j <= i; j++) {
+                        out.print("*");
+                    }
+                    out.println("<br />");
+                }
+                out.print("</section>");
+
+                out.print("<section>");
+                out.println("<h3>Exercice 3 : Triangle rectangle inversé :</h3>");
+                for (int i = value; i > 0; i--) {
+                    for (int j = 1; j <= i; j++) {
+                        out.print("*");
+                    }
+                    out.println("<br />");
+                }
+                out.print("</section>");
+
+                out.print("<section>");
+                out.println("<h3>Exercice 4 : Triangle rectangle 2 :</h3>");
+                for (int i = value; i > 0; i--) {
+                    for (int j = 1; j < i; j++) {
+                        out.print("&nbsp;&nbsp;");
+                    }
+
+                    for (int k = 0; k <= value - i; k++) {
+                        out.print("*");
+                    }
+
+                    out.println("<br />");
+                }
+                out.print("</section>");
+
+                out.print("<section>");
+                out.println("<h3>Exercice 5 : Triangle isocèle :</h3>");
+                for (int i = value; i > 0; i--) {
+                    for (int j = 1; j < i; j++) {
+                        out.print("&nbsp;");
+                    }
+
+                    for (int k = 0; k <= value - i; k++) {
+                        out.print("*");
+                    }
+
+                    out.println("<br />");
+                }
+                out.print("</section>");
+
+                out.print("<section>");
+                out.println("<h3>Exercice 6 : Le demi-losange :</h3>");
+                // Partie supérieure du losange
+                for (int i = value; i > 0; i--) {
+                    for (int j = 1; j < i; j++) {
+                        out.print(" ");
+                    }
+            
+                    for (int k = 0; k <= value - i; k++) {
+                        out.print("*");
+                    }
+            
+                    out.println("<br />");
+                }
+                
+                // Partie inférieure du losange
+                for (int i = 0; i <= value; i++) {
+                    for (int j = 0; j < i; j++) {
+                        out.print(" ");
+                    }
+                    
+                    for (int k = 0; k < value - i; k++) {
+                        out.print("*");
+                    }
+                    
+                    out.println("<br />");
+                }
+                out.print("</section>");
+
+                out.print("<section>");
+                out.println("<h3>Exercice 7 : La table de multiplication</h3>");
+                for (int i = 1; i <= 10; i++) {
+                    out.print(String.format("%d x %d = %d<br />", i, value, i * value));
+                }
+                out.print("</section>");
             }
-            System.out.println();
-        }
-        
-        scanner.close();
-    }
-}
-
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>*****</br>*****</br>*****</br>*****</br>*****</p>
-
-<h2>Exercice 2 : Triangle rectangle gauche</h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
-import java.util.Scanner;
-
-public class TriangleRectangleGauche {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        // Demander à l'utilisateur de saisir une valeur
-        System.out.print("Entrez un nombre : ");
-        int valeur = scanner.nextInt();
-        
-        // Afficher le triangle rectangle gauche
-        for (int i = 1; i <= valeur; i++) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print("*");
-            }
-            System.out.println(); // Nouvelle ligne après chaque rangée
-        }
-        
-        scanner.close();
-    }
-}
-
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>*</br>**</br>***</br>****</br>*****</p>
-
-<h2>Exercice 3 : Triangle rectangle inversé</h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
-import java.util.Scanner;
-
-public class TriangleInverse {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Entrez un nombre : ");
-        int n = scanner.nextInt();
-        scanner.close();
-
-        for (int i = n; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-    }
-}
-
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>*****</br>****</br>***</br>**</br>*</p>
-
-<h2>Exercice 4 : Triangle rectangle 2</h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
-
-
-
-
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
-
-<h2>Exercice 5 : Triangle isocele</h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;***</br>&nbsp;****</br>*****</p>
-
-<h2>Exercice 6 : Le demi losange</h2>
-<p>Ecrire le code afin de produire un losange</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
-<p>*****</br>&nbsp;&nbsp;****</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</p>
-
-<h2>Exercice 7 : La table de multiplication</h2>
-<p>Ecrire le code afin de créser une table de multiplication</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>5 x 1 = 5</p>
-<p>5 x 2 = 10</p>
-<p>5 x 3 = 15</p>
-<p>5 x 4 = 20</p>
-<p>5 x 5 = 25</p>
-
-<% } %>
-<p><a href="index.html">Retour au sommaire</a></p>
-</body>
-</html>
+        %>
