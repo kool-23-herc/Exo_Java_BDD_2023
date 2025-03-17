@@ -105,42 +105,7 @@ public class TriangleInverse {
 <h2>Exercice 4 : Triangle rectangle 2</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
 
-<html>
-<head>
-    <title>Triangle Rectangle 2</title>
-    <style>
-        pre { font-family: monospace; } /* Assure un alignement correct */
-    </style>
-</head>
-<body>
-    <form method="post">
-        <label for="valeur">Entrez un nombre :</label>
-        <input type="number" name="valeur" id="valeur" required>
-        <button type="submit">Afficher</button>
-    </form>
 
-    <%-- Récupération de la valeur saisie par l'utilisateur --%>
-    <% String valeur = request.getParameter("valeur"); %>
-
-    <%-- Vérification de l'existence de la valeur --%>
-    <% if (valeur != null && !valeur.isEmpty()) { %>
-        <% int cpt = Integer.parseInt(valeur); %>
-        <pre>
-        <% for (int i = 1; i <= cpt; i++) { 
-                // Espaces pour l'alignement à droite
-                for (int j = 1; j <= cpt - i; j++) { %>
-                    <%= " " %>
-                <% } 
-                // Affichage des étoiles
-                for (int k = 1; k <= i; k++) { %>
-                    <%= "*" %>
-                <% } %>
-            <br>
-        <% } %>
-        </pre>
-    <% } %>
-</body>
-</html>
 
 
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
